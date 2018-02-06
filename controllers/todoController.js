@@ -1,5 +1,26 @@
 
 var bodyParser =require('body-parser');
+var mongoose = require('mongoose');
+
+
+//connecting to data base
+
+mongoose.connect('mongodb://root:root@ds125368.mlab.com:25368/todos');
+
+//create a schema
+
+var todoSchema = new mongoose.Schema({
+
+    item: String
+});
+
+//model
+var Todo = mongoose.model('Todo', todoSchema);
+var itemOne = Todo({item: 'get flowers'}).save(function(err) {
+
+    if(err) throw err;
+    console.log('item saved');
+});
 
 var data = [{item: 'get water'}, {item: 'walk'}, {item: "play soccer"}];
 
@@ -19,8 +40,11 @@ module.exports =function(app) {
         res.json(data);
     });
 
-    app.delete('/todo', function(req, res) {
-
+    app.delete('/todo/:item', function(req, res) {
+        data = data.filter(function(todo) {
+            return todo.item.replace(/ /g, '-') !== req.params.item;
+        });
+        res.json(data);
     });
 
 };
