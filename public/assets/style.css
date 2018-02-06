@@ -1,5 +1,5 @@
 body{
-    background: #0d1521;
+    background: #1c222b;
     font-family: tahoma;
     color: #989898;
 }
@@ -7,7 +7,7 @@ body{
 #todo-table{
     position: relative;
     width: 95%;
-    background: #090d13;
+    background: #344155;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -23,21 +23,21 @@ body{
 input[type="text"]{
     width: 70%;
     padding: 20px;
-    background:#181c22;
+    background:#7d8ca3;
     border: 0;
     float: left;
     font-size: 20px;
-    color: #989898;
+    color: #4b3333;
 }
 
 button{
     padding: 20px;
     width: 20%;
     float: left;
-    background: #23282e;
+    background: #4e5966;
     border: 0;
     box-sizing: border-box;
-    color: #fff;
+    color: rgb(219, 208, 208);
     cursor: pointer;
     font-size: 20px;
     
